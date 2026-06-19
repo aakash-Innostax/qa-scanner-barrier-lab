@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Just a moment...</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 720px; margin: 60px auto; padding: 20px; line-height: 1.6; }
+    .widget { margin: 24px 0; }
+    p.note { font-size: 14px; color: #444; }
+  </style>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body>
+  <h1>Performing security verification</h1>
+  <p>This page embeds a real Cloudflare Turnstile widget using the official <strong>always-fail</strong> test sitekey (<code>2x…</code>).</p>
+  <p>Verify you are human before continuing.</p>
+  <div class="widget">
+    <div
+      class="cf-turnstile"
+      data-sitekey="2x00000000000000000000AB"
+      data-theme="light"
+    ></div>
+  </div>
+  <p class="note">POC 3: QA Scanner must detect the vendor widget and skip generic checkbox clicks. Expect scan failure in headless unless you use <code>QA_HEADLESS=false</code> or IP allowlisting on production WAFs.</p>
+  <p><a href="vendor-captcha-info.html">← Vendor captcha limits (POC 3)</a></p>
+</body>
+</html>

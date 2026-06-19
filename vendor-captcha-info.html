@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vendor Captcha Limits (POC 3)</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 20px; line-height: 1.6; }
+    table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: left; vertical-align: top; }
+    th { background: #f5f5f5; }
+    code { background: #f0f0f0; padding: 2px 4px; }
+  </style>
+</head>
+<body>
+  <h1>POC 3 — Vendor captcha limits</h1>
+  <p>
+    Turnstile, reCAPTCHA, and hCaptcha widgets run in <strong>cross-origin iframes</strong>.
+    QA Scanner’s generic barrier engine (checkbox + Continue) cannot drive them.
+  </p>
+
+  <h2>Lab pages</h2>
+  <ul>
+    <li><a href="./turnstile-vendor.html">Turnstile widget (always-fail test key)</a></li>
+    <li><a href="./cloudflare-clickable.html">Simple checkbox lab (auto-resolves)</a> — contrast</li>
+  </ul>
+
+  <h2>Official vendor demos (external)</h2>
+  <ul>
+    <li><a href="https://developers.cloudflare.com/turnstile/" rel="noopener noreferrer">Cloudflare Turnstile docs</a></li>
+    <li><a href="https://www.google.com/recaptcha/api2/demo" rel="noopener noreferrer">Google reCAPTCHA v2 demo</a></li>
+    <li><a href="https://accounts.hcaptcha.com/demo" rel="noopener noreferrer">hCaptcha demo</a></li>
+  </ul>
+
+  <h2>Expected scanner behavior</h2>
+  <table>
+    <thead>
+      <tr><th>Barrier</th><th>Generic engine</th><th>Ops / headed</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Simple HTML checkbox + Continue</td>
+        <td><strong>Resolves</strong> headless</td>
+        <td>Not required</td>
+      </tr>
+      <tr>
+        <td>Turnstile / reCAPTCHA / hCaptcha widget</td>
+        <td><strong>Does not resolve</strong> — detects widget, skips fake clicks</td>
+        <td><code>QA_HEADLESS=false</code>, manual solve; or WAF IP allowlist for scanner egress</td>
+      </tr>
+      <tr>
+        <td>Production Cloudflare (innostax.com)</td>
+        <td>Fails with clear bot-challenge message</td>
+        <td>Allowlist scanner IP in Cloudflare</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><a href="./">← Barrier lab home</a></p>
+</body>
+</html>

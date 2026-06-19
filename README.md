@@ -12,6 +12,8 @@ A public testing site for QA Scanner barrier detection.
 | Cookie Consent | /cookie-consent.html |
 | Age Gate | /age-gate.html |
 | Login Wall | /login-wall.html |
+| Vendor Captcha (POC 3) | /vendor-captcha-info.html |
+| Turnstile widget (always-fail test key) | /turnstile-vendor.html |
 | Application (post-verification) | /app.html |
 | Login Required | /login.html |
 | Paywall | /paywall.html |
