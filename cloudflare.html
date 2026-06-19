@@ -1,73 +1,192 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Just a moment...</title>
+<meta charset="UTF-8">
+<title>Just a moment...</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      color: #222;
-      margin: 0;
-    }
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f3f3;
+    color: #222;
+}
 
-    .container {
-      width: 700px;
-      margin: 120px auto;
-    }
+.container {
+    width: 900px;
+    margin: 100px auto;
+}
 
-    .verify-box {
-      width: 320px;
-      border: 1px solid #ccc;
-      background: white;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      margin-top: 30px;
-    }
+.site {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
 
-    .checkbox {
-      width: 24px;
-      height: 24px;
-      border: 2px solid #555;
-    }
+.title {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
 
-    footer {
-      position: fixed;
-      bottom: 15px;
-      width: 100%;
-      text-align: center;
-      color: #666;
-    }
-  </style>
+.description {
+    font-size: 14px;
+    line-height: 1.6;
+    width: 900px;
+}
+
+.verify-box {
+    margin-top: 35px;
+    width: 300px;
+    background: white;
+    border: 1px solid #d8d8d8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px;
+}
+
+.verify-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.checkbox {
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+}
+
+.cloudflare {
+    font-size: 10px;
+    text-align: center;
+}
+
+.continue-section {
+    margin-top: 30px;
+    display: none;
+}
+
+.continue-btn {
+    padding: 10px 24px;
+    border: none;
+    background: #0051ff;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+}
+
+.ray {
+    margin-bottom: 10px;
+}
+</style>
 </head>
+
 <body>
 
 <div class="container">
-  <h1>qa-scanner-barrier-lab.github.io</h1>
 
-  <h2>Performing security verification</h2>
+    <div class="site">
+        innostax.com
+    </div>
 
-  <p>
-    This website uses a security service to protect against malicious bots.
-    This page is displayed while the website verifies you are not a bot.
-  </p>
+    <div class="title">
+        Performing security verification
+    </div>
 
-  <div class="verify-box">
-    <div class="checkbox"></div>
-    <span>Verify you are human</span>
-  </div>
+    <div class="description">
+        This website uses a security service to protect against malicious bots.
+        This page is displayed while the website verifies you are not a bot.
+    </div>
 
-  <p style="margin-top:40px;">
-    Ray ID: a0e04e3819c8b298
-  </p>
+    <div class="verify-box">
+
+        <div class="verify-left">
+
+            <input
+                id="human-check"
+                class="checkbox"
+                type="checkbox"
+                aria-label="Verify you are human"
+            />
+
+            <label for="human-check">
+                Verify you are human
+            </label>
+
+        </div>
+
+        <div class="cloudflare">
+            <strong>CLOUDFLARE</strong><br>
+            Privacy • Help
+        </div>
+
+    </div>
+
+    <div id="continue-section" class="continue-section">
+
+        <p>
+            Verification successful.
+        </p>
+
+        <button
+            id="continue-btn"
+            class="continue-btn"
+        >
+            Continue
+        </button>
+
+    </div>
+
 </div>
 
-<footer>
-  Performance and Security by Cloudflare
-</footer>
+<div class="footer">
+
+    <div class="ray">
+        Ray ID: a0e04f2ee8ebb298
+    </div>
+
+    <div>
+        Performance and Security by Cloudflare
+    </div>
+
+</div>
+
+<script>
+
+const checkbox =
+    document.getElementById("human-check");
+
+const continueSection =
+    document.getElementById("continue-section");
+
+checkbox.addEventListener("change", () => {
+
+    if (checkbox.checked) {
+        continueSection.style.display = "block";
+    } else {
+        continueSection.style.display = "none";
+    }
+
+});
+
+document
+    .getElementById("continue-btn")
+    .addEventListener("click", () => {
+
+        window.location.href = "app.html";
+
+    });
+
+</script>
 
 </body>
 </html>
