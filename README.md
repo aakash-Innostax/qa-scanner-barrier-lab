@@ -8,6 +8,8 @@ A public testing site for QA Scanner barrier detection.
 |----------|------|
 | Home | / |
 | Cloudflare Verification | /cloudflare.html |
+| Cloudflare Verification (clickable lab) | /cloudflare-clickable.html |
+| Application (post-verification) | /app.html |
 | Login Required | /login.html |
 | Paywall | /paywall.html |
 | Maintenance Mode | /maintenance.html |
@@ -40,4 +42,4 @@ Folder:
 
 Site URL:
 
-https://<username>.github.io/qa-scanner-barrier-lab/
+https://aakash-innostax.github.io/qa-scanner-barrier-lab/

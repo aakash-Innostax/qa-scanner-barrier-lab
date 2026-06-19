@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://<username>.github.io/qa-scanner-barrier-lab/</loc>
+    <loc>https://aakash-innostax.github.io/qa-scanner-barrier-lab/</loc>
+  </url>
+  <url>
+    <loc>https://aakash-innostax.github.io/qa-scanner-barrier-lab/cloudflare.html</loc>
+  </url>
+  <url>
+    <loc>https://aakash-innostax.github.io/qa-scanner-barrier-lab/cloudflare-clickable.html</loc>
+  </url>
+  <url>
+    <loc>https://aakash-innostax.github.io/qa-scanner-barrier-lab/app.html</loc>
+  </url>
+  <url>
+    <loc>https://aakash-innostax.github.io/qa-scanner-barrier-lab/login.html</loc>
+  </url>
+  <url>
+    <loc>https://aakash-innostax.github.io/qa-scanner-barrier-lab/paywall.html</loc>
+  </url>
+  <url>
+    <loc>https://aakash-innostax.github.io/qa-scanner-barrier-lab/maintenance.html</loc>
+  </url>
+  <url>
+    <loc>https://aakash-innostax.github.io/qa-scanner-barrier-lab/access-denied.html</loc>
+  </url>
+  <url>
+    <loc>https://aakash-innostax.github.io/qa-scanner-barrier-lab/rate-limit.html</loc>
   </url>
 </urlset>
