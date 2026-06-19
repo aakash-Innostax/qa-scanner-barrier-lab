@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Age Verification</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 640px; margin: 80px auto; padding: 20px; line-height: 1.6; }
+    button { padding: 10px 24px; background: #0051ff; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Age verification required</h1>
+    <p>You must be 18 years of age or older to enter this site.</p>
+    <p>Please confirm your age to continue.</p>
+    <button type="button" id="enter-btn">I am 18</button>
+  </main>
+  <script>
+    document.getElementById("enter-btn").addEventListener("click", () => {
+      window.location.href = "app.html";
+    });
+  </script>
+</body>
+</html>

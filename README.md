@@ -9,6 +9,9 @@ A public testing site for QA Scanner barrier detection.
 | Home | / |
 | Cloudflare Verification | /cloudflare.html |
 | Cloudflare Verification (clickable lab) | /cloudflare-clickable.html |
+| Cookie Consent | /cookie-consent.html |
+| Age Gate | /age-gate.html |
+| Login Wall | /login-wall.html |
 | Application (post-verification) | /app.html |
 | Login Required | /login.html |
 | Paywall | /paywall.html |
